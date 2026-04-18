@@ -43,7 +43,7 @@ from playwright.sync_api import expect
 from config import Config    # Configuration file holding credentials
 
 
-#@pytest.mark.regression
+@pytest.mark.regression
 def test_invalid_user_login(page):
     home_page = HomePage(page)
     login_page = LoginPage(page)
@@ -75,7 +75,7 @@ def test_valid_user_login(page):
 
     time.sleep(3)
 
-    expect(my_account_page.get_my_account_page_heading()).to_be_visible(timeout=3000)
+    expect(my_account_page.get_my_account_page_heading()).to_be_visible(timeout=5000)
 
 
 

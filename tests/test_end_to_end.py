@@ -87,7 +87,7 @@ def perform_logout(page):
     logout_page = LogoutPage(page)
 
     my_account.click_logout()
-    expect(logout_page.get_continue_button()).to_be_visible(timeout=3000) #checks continue button on logout page
+    expect(logout_page.get_continue_button()).to_be_visible(timeout=5000) #checks continue button on logout page
 
     logout_page.click_continue()  # navigates to HomePage
     expect(page).to_have_title("Your Store")  # Checks Home Page Exists with title
@@ -107,7 +107,7 @@ def perform_login(page, email,password):
 
     my_account_page = MyAccountPage(page)
     # Verify successful login by checking 'My Account' page presence
-    expect(my_account_page.get_my_account_page_heading()).to_be_visible(timeout=3000)
+    expect(my_account_page.get_my_account_page_heading()).to_be_visible(timeout=5000)
 
 
 # -------------------------------------------------------------

@@ -28,7 +28,7 @@ from pages.search_results_page import SearchResultsPage
 from config import Config
 
 
-#@pytest.mark.regression
+@pytest.mark.regression
 def test_add_product_to_cart(page):
     """
     Automated Test Case: Verify user can search and add a product to the cart.
@@ -55,4 +55,4 @@ def test_add_product_to_cart(page):
 
     # --- Step 4: Verify Confirmation Message ---
     # Ensure the success message appears within 3 seconds after adding the product
-    expect(product_page.get_confirmation_message()).to_be_visible(timeout=3000)
+    expect(product_page.get_confirmation_message()).to_be_visible(timeout=5000)

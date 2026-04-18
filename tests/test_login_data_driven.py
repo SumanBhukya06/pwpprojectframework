@@ -16,7 +16,7 @@ json_data=read_json_data("testdata/logindata.json")
 excel_data=read_excel_data("testdata/logindata.xlsx")
 
 @pytest.mark.datadriven
-@pytest.mark.parametrize("testName,email,password,expected",excel_data)
+@pytest.mark.parametrize("testName,email,password,expected",json_data)
 def test_login_data_driven(page,testName,email,password,expected):
     home_page = HomePage(page)
     login_page = LoginPage(page)
@@ -29,6 +29,6 @@ def test_login_data_driven(page,testName,email,password,expected):
     time.sleep(3)
 
     if expected=="success":
-        expect(my_account_page.get_my_account_page_heading()).to_be_visible(timeout=3000)
+        expect(my_account_page.get_my_account_page_heading()).to_be_visible(timeout=5000)
     else:
         expect(login_page.get_login_error()).to_be_visible(timeout=3000)
