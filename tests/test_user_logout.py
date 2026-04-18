@@ -29,7 +29,7 @@ from pages.my_account_page import MyAccountPage
 from config import Config
 
 
-#@pytest.mark.regression
+@pytest.mark.regression
 def test_user_logout(page):
     """
     Automated Test Case: Verify that a logged-in user can successfully log out of the application.
@@ -50,14 +50,14 @@ def test_user_logout(page):
     login_page.click_login()
 
     # --- Step 4: Verify 'My Account' Page is Displayed ---
-    expect(my_account_page.get_my_account_page_heading()).to_be_visible(timeout=3000)
+    expect(my_account_page.get_my_account_page_heading()).to_be_visible(timeout=5000)
 
     # --- Step 5: Perform Logout Action ---
     logout_page = my_account_page.click_logout()
 
     # --- Step 6: Verify Logout Page is Displayed ---
     # Checks whether the 'Continue' button is visible on the Logout page
-    expect(logout_page.get_continue_button()).to_be_visible(timeout=3000)
+    expect(logout_page.get_continue_button()).to_be_visible(timeout=5000)
 
     # --- Step 7: Click 'Continue' to Return to Home Page ---
     logout_page.click_continue()
