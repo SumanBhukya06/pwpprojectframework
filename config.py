@@ -1,6 +1,6 @@
 class Config:
-    email="pavanol@abc.com"
-    password="test@123"
+    email="joy@gmail.com"
+    password="joy123"
 
     invalid_email="pavanol123@abc.com"
     invalid_password="test@123xyz"
