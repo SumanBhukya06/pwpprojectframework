@@ -20,7 +20,7 @@ class MyAccountPage:
 
         # ===== Locators =====
         # Identifying elements on the My Account page.
-        self.msg_heading = page.locator('h2:has-text("My Account")')
+        self.msg_heading = page.locator("h2:has-text('My Account')")
         self.lnk_logout = page.locator("text='Logout'").nth(1)
 
     # ===== Page Validation Methods =====
@@ -29,15 +29,17 @@ class MyAccountPage:
         """
         Returns the locator for the 'My Account' page heading.
         Can be used in test assertions to verify page visibility.
-
-        Example:
-            expect(my_account_page.get_my_account_page_heading()).to_be_visible()
         """
-        try:
-            return self.msg_heading
-        except Exception as e:
-            print(f"Error returning My Account page heading: {e}")
-            return None
+
+
+        #expect(my_account_page.get_my_account_page_heading()).to_be_visible()
+
+        # try:
+        #     return self.msg_heading
+        # except Exception as e:
+        #     print(f"Error returning My Account page heading: {e}")
+        #     return None
+        return self.msg_heading
 
     # ===== Logout Action =====
 
