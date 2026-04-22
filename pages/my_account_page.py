@@ -24,6 +24,7 @@ class MyAccountPage:
         self.lnk_logout = page.locator("text='Logout'").nth(1)
         self.clk_newsletter=page.locator("a:nth-child(12)")
         self.newsletter_update_text=page.locator(".alert.alert-success.alert-dismissible")
+        self.con=self.page.locator(".btn.btn-primary")
 
     # ===== Page Validation Methods =====
 
@@ -80,4 +81,7 @@ class MyAccountPage:
 
     def verify_newsletter_update_msz(self):
         self.newsletter_update_text
+
+    def clk_continue_ac(self):
+        self.con.click()
 

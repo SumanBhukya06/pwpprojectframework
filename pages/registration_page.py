@@ -60,8 +60,7 @@ class RegistrationPage:
         self.txt_confirm_password.fill(pwd)
 
     def chk_radio_newsletter_yes(self):
-        #return self.radio_newsletter_yes.is_checked()
-        self.radio_newsletter_yes.click()
+        self.radio_newsletter_yes.check()
 
     def set_privacy_policy(self):
         """Select the 'Privacy Policy' checkbox."""
