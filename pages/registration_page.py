@@ -21,6 +21,11 @@ class RegistrationPage:
         self.txt_password = page.locator('#input-password')
         self.txt_confirm_password = page.locator('#input-confirm')
 
+        #Newsletter radio button
+        self.radio_newsletter_yes=page.locator("input[value='1'][name='newsletter']")
+        #self.radio_newsletter_no=page.locator("input[value='0'][name='newsletter']")
+
+
         # Checkbox and buttons
         self.chk_policy = page.locator('input[name="agree"]')
         self.btn_continue = page.locator('input[value="Continue"]')
@@ -53,6 +58,10 @@ class RegistrationPage:
     def set_confirm_password(self, pwd: str):
         """Re-enter the password in the 'Confirm Password' field."""
         self.txt_confirm_password.fill(pwd)
+
+    def chk_radio_newsletter_yes(self):
+        #return self.radio_newsletter_yes.is_checked()
+        self.radio_newsletter_yes.click()
 
     def set_privacy_policy(self):
         """Select the 'Privacy Policy' checkbox."""

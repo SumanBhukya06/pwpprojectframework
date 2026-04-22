@@ -22,6 +22,8 @@ class MyAccountPage:
         # Identifying elements on the My Account page.
         self.msg_heading = page.locator("h2:has-text('My Account')")
         self.lnk_logout = page.locator("text='Logout'").nth(1)
+        self.clk_newsletter=page.locator("a:nth-child(12)")
+        self.newsletter_update_text=page.locator(".alert.alert-success.alert-dismissible")
 
     # ===== Page Validation Methods =====
 
@@ -73,3 +75,9 @@ class MyAccountPage:
         except Exception as e:
             print(f"Error retrieving page title: {e}")
             return ""
+    def click_newsletter(self):
+        self.clk_newsletter.click()
+
+    def verify_newsletter_update_msz(self):
+        self.newsletter_update_text
+

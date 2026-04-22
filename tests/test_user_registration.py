@@ -24,10 +24,12 @@ After submitting valid details, the system should display the message:
 """
 import pytest
 
+from pages import my_account_page
 from pages.home_page import HomePage
 from pages.registration_page import RegistrationPage
 from utilities.random_data_util import RandomDataUtil
 from playwright.sync_api import expect
+from pages.my_account_page import MyAccountPage
 
 
 @pytest.mark.sanity
@@ -35,6 +37,7 @@ from playwright.sync_api import expect
 def test_user_registration(page):
     home_page=HomePage(page)
     registration_page=RegistrationPage(page)
+    my_account_page=MyAccountPage(page)
 
     home_page.click_my_account()
     home_page.click_register()
@@ -59,3 +62,6 @@ def test_user_registration(page):
 
     confirmation_msg=registration_page.get_confirmation_msg()
     expect(confirmation_msg).to_have_text("Your Account Has Been Created!")
+
+    my_account_page.click_newsletter()
+    
